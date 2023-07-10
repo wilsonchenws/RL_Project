@@ -15,9 +15,3 @@ So far, there're no huge improvement by changing different model, and I think th
 - Reward Shaping 
 - Hieracy Learning
 - Curriculum Learning
-
-
-Adding more code here.
-
-
-New Linelineline
