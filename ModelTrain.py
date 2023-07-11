@@ -188,6 +188,8 @@ class Memory(object):
 #%% Define Cost function and learning function
 def compute_loss(transitions, ISWeights , gamma):
     
+    
+    
         # <----current_state----><---action_size---><--Rewards--><-----next state----------><-done vals->
         # 7 + size_of_map * 3             4              1            7 + size_of_map * 3        1
     
