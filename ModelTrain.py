@@ -187,7 +187,17 @@ class Memory(object):
                 
 #%% Define Cost function and learning function
 def compute_loss(transitions, ISWeights , gamma):
-    
+    """Function to calculate loss value based on transitions. ISWeights is Priority Replay Algorithm's way to eliminate biass
+
+    Parameters
+    ----------
+    transitions : numpy.array
+        This is data stored when agent explored. Sample are drawn based on Priority Replay Algorithm
+    ISWeights : numpy.array
+        Bias correction vector that need to multiplied to gradient of each parameter.
+    gamma : float
+        Discount factor to incentivize agent to gain rewards earlier and postpone punishment as long as possible.
+    """
     
     
         # <----current_state----><---action_size---><--Rewards--><-----next state----------><-done vals->
@@ -210,7 +220,7 @@ def compute_loss(transitions, ISWeights , gamma):
     
     
     q_values = q_network(states)
-    q_values = tf.reduce_sum(tf.math.multiply(q_values, tf.cast(actions, tf.float32)), axis = -1)
+    q_values = tf.reduce_sum(tf.math.multiply(q_values, tf.cast(actions, tf.float32)), axis = -1) 
     
     abs_diff = tf.math.abs(q_values - y_targets)
     
